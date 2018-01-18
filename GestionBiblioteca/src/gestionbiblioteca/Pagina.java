@@ -10,6 +10,10 @@ public class Pagina {
     private int num;
     
     //Constructor
+    /**
+     * Constructor de página
+     * @param enternum número de la página
+     */
     public Pagina(int enternum){
         num=enternum;
     }
@@ -20,6 +24,10 @@ public class Pagina {
     }
     
     //getter
+    /**
+     * Devuelve el número de la página.
+     * @return Devuelve el número de la página.
+     */
     public int getNum(){
         int numero=num;
         return numero;

@@ -15,24 +15,40 @@ public class Libro {
     private ArrayList<Pagina> arrayPaginas;
 
     //Constructor
+    /**
+     * Constructor de libro.
+     * @param autor Autor del libro
+     * @param titulo Título del libro
+     * @param anyo Año de publicación
+     * @param paginas Páginas del libro
+     */
     public Libro(String autor, String titulo, int anyo,int paginas) {
         this.autor = autor;
         this.titulo = titulo;
         this.anyo = anyo;
         this.arrayPaginas= new ArrayList<Pagina>();
-        rellenarLibro(arrayPaginas);
+        rellenarLibro(paginas);
         
     }
-
     //setters
+    /**
+     * Cambia el nombre del autor.
+     * @param autor El nombre del autor.
+     */
     public void setAutor(String autor) {
         this.autor = autor;
     }
-
+    /**
+     * Cambia el nombre del título
+     * @param titulo El nombre del título.
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
+    /**
+     * Cambia el año de publicación
+     * @param anyo  El año de publicación.
+     */
     public void setAnyo(int anyo) {
         this.anyo = anyo;
     }
@@ -54,15 +70,23 @@ public class Libro {
     }
     
     //funciones
-    public void rellenarLibro(ArrayList<Pagina> libro){
-        for(int i=0;i<libro.size();i++){
-            libro.add(new Pagina(i+1));
+    /**
+     * Rellena el atributo arraylist "arrayPaginas" de tantos objetos Página como páginas tiene el libro.
+     * @param n El número de páginas del libro.
+     */
+    private void rellenarLibro(int n){
+        for(int i=0;i<n;i++){
+            arrayPaginas.add(new Pagina(i+1));
              }    
     }
     
-    public void addPaginas(int n,ArrayList<Pagina> libro){
+    /**
+     * Añade el número de objetos Página deseados al atributo arraylist "arrayPaginas"
+     * @param n Es el número de páginas que se desean añadir
+     */
+    public void addPaginas(int n){
         for(int i=0;i<n;i++){
-            libro.add(new Pagina(libro.size()+1));
+            arrayPaginas.add(new Pagina(arrayPaginas.size()+1));
     }
         
     }
