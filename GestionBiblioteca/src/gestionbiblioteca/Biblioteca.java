@@ -37,6 +37,7 @@ public class Biblioteca {
      * @param libronuevo Es el objeto de tipo Libro que añadiremos
      */
     public void addLibro(Libro libronuevo) {
+        libronuevo.setBiblioteca(this);
         libros.add(libronuevo);
     }
     
@@ -73,5 +74,18 @@ public class Biblioteca {
         }
         System.out.print("El libro introducido no se encuentra.");
         return null;
+    }
+    
+    public void reportLibros(){
+        System.out.print(nombre);
+        for(int i = 0;i<libros.size();i++){
+            imprimirLibro(libros.get(i));
+        }
+    }
+    
+    private void imprimirLibro(Libro libro){
+        System.out.print("Título: "+libro.getTitulo()+", ");
+        System.out.print("Autor: "+libro.getAutor()+(", "));
+        System.out.println("Año: "+libro.getAnyo()+".");
     }
 }

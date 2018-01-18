@@ -8,6 +8,7 @@ package gestionbiblioteca;
 public class Pagina {
     //Atributos
     private int num;
+    private Libro libro;
     
     //Constructor
     /**
@@ -21,6 +22,10 @@ public class Pagina {
     //setter
     public void setNum(int enternum){ //Setter
         num=enternum;
+    }
+    
+    public void setLibro(Libro libro){
+        this.libro=libro;
     }
     
     //getter

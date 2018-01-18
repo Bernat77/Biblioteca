@@ -13,6 +13,7 @@ public class Libro {
     private String titulo;
     private int anyo;
     private ArrayList<Pagina> arrayPaginas;
+    private Biblioteca biblioteca;
 
     //Constructor
     /**
@@ -52,6 +53,10 @@ public class Libro {
     public void setAnyo(int anyo) {
         this.anyo = anyo;
     }
+    
+    public void setBiblioteca(Biblioteca biblio){
+        biblioteca=biblio;
+    }
 
     //getters
     public String getAutor() {
@@ -69,6 +74,11 @@ public class Libro {
         return anyo;
     }
     
+    public Biblioteca getBiblio(){
+        Biblioteca biblio=this.biblioteca;
+        return biblio;
+    }
+    
     //funciones
     /**
      * Rellena el atributo arraylist "arrayPaginas" de tantos objetos Página como páginas tiene el libro.
@@ -77,6 +87,7 @@ public class Libro {
     private void rellenarLibro(int n){
         for(int i=0;i<n;i++){
             arrayPaginas.add(new Pagina(i+1));
+            (arrayPaginas.get(i)).setLibro(this);
              }    
     }
     
